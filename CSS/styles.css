@@ -1,0 +1,190 @@
+:root {
+  --color-fondo: #0f0f0f;
+  --color-texto: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+.cuadricula{
+  display: grid;
+}
+
+.tres-columnas {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.fila {
+  display: flex;
+}
+
+.columna {
+  flex-direction: column;
+}
+
+.centrar-contenido {
+  justify-content: center;
+  align-items: center;
+}
+
+.contenido-derecha {
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.contenido-izquierda {
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.separacion {
+  gap: 15px;
+}
+
+.padding-general {
+  padding: 10px 20px;
+}
+
+/* Estilos personalizados */
+
+#buscador {
+  width: 100%;
+}
+
+#buscador > input {
+  background-color: transparent;
+  border: 1px solid #313131;
+  border-radius: 20px 0 0 20px;
+  color: var(--color-texto);
+  padding: 5px 10px;
+  width: 100%;
+}
+
+#buscador > button {
+  background-color: #313131;
+  border: 1px solid #313131;
+  border-radius: 0 20px 20px 0;
+  color: var(--color-texto);
+  padding: 5px 10px;
+}
+
+.icono {
+  background-color: transparent;
+  color: white;
+  border: none;
+}
+
+.mobile{
+  display: flex;
+}
+
+.desktop {
+  display: none;
+}
+
+main {
+  width: 97vw;
+  grid-template-columns: 100%;
+}
+
+aside {
+  gap: 20px;
+}
+
+aside > div {
+  gap: 5px;
+  padding: 8px 5px;
+}
+
+aside > div:hover {
+  background-color: #313131;
+  border-radius: 5px;
+}
+
+aside > div > p{
+  font-size: 8px;
+}
+
+#categorias{
+  overflow-x: auto;
+  padding: 12px 35px;
+  gap: 20px;
+  width: auto;
+}
+
+#categorias > button{
+  background-color: #313131;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+#categorias > button:first-child{
+  background-color: white;
+  color: #313131;
+}
+
+/*Esconder barras de desplazamiento en navegadores webkit (Chrome, Safari)*/
+#categorias::-webkit-scrollbar {
+  display: none;
+}
+
+#videos{
+  grid-template-columns: 1fr;
+  padding: 20px 20px;
+  gap: 20px
+}
+
+.video > img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+#video_info {
+  grid-template-columns: 50px auto 30px;
+}
+
+#video_info > div > h2 {
+  font-size: 16px;
+}
+
+#video_info > div > p {
+  font-size: 12px;
+}
+
+#video_info img {
+  width: 38px;
+  border-radius: 50%;
+}
+
+
+@media only screen and (min-width: 768px) {
+  .mobile{
+    display: none;
+  }
+  .desktop {
+    display: flex;
+  }
+  .tres-columnas {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  main {
+    grid-template-columns: 65px minmax(0, 1fr);
+  }
+  #videos{
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
